@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", serif;
+
+  --color-brand-orange: #E8590C;
+  --color-brand-warm: #FFF8F0;
+  --color-brand-cream: #FEF3E2;
+  --color-brand-dark: #1C1917;
+  --color-brand-brown: #78350F;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-brand-dark;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8590C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C2410C;
+}
+
+.nav-link {
+  @apply text-sm font-medium transition-colors hover:text-brand-orange;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-white bg-brand-orange hover:bg-orange-700 transition-all shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-4 border-2 border-brand-orange text-base font-bold rounded-xl text-brand-orange bg-transparent hover:bg-brand-orange hover:text-white transition-all;
+}
